@@ -75,11 +75,11 @@ export function Footer() {
                 {site.address.city}, {site.address.region} {site.address.postalCode}
               </p>
               <p>
-                <a href={`tel:${site.phone.tel}`} className="transition-colors hover:text-blush">
+                <a href={`tel:${site.phone.tel}`} className="inline-block py-1.5 transition-colors hover:text-blush">
                   {site.phone.display}
                 </a>
                 <br />
-                <a href={`mailto:${site.email}`} className="transition-colors hover:text-blush">
+                <a href={`mailto:${site.email}`} className="inline-block py-1.5 transition-colors hover:text-blush">
                   {site.email}
                 </a>
               </p>
@@ -99,9 +99,10 @@ export function Footer() {
 
       {/* Oversized wordmark */}
       <div aria-hidden className="pointer-events-none mt-14 select-none overflow-hidden text-center md:mt-20">
-        <p className="font-display text-[clamp(3.6rem,17.5vw,17rem)] font-light italic leading-[0.85] tracking-[-0.02em] text-ivory/[0.07]">
-          {site.shortName}
-        </p>
+        <p
+          data-text={site.shortName}
+          className="font-display text-[clamp(3.6rem,17.5vw,17rem)] font-light italic leading-[0.85] tracking-[-0.02em] text-ivory/[0.07] before:content-[attr(data-text)]"
+        />
       </div>
 
       <div className="border-t border-ivory/15">
@@ -110,7 +111,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="text-center">Demo design preview · All content, prices and reviews are placeholders.</p>
-          <Link href="/policy" className="transition-colors hover:text-blush">
+          <Link href="/policy" className="inline-block py-1.5 transition-colors hover:text-blush">
             Booking &amp; cancellation policy
           </Link>
         </div>

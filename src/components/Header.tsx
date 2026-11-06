@@ -61,7 +61,7 @@ export function Header() {
         <div className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
           <Link
             href="/"
-            aria-label={`${site.name} – home`}
+            aria-label={site.name}
             className="shrink-0"
           >
             <Wordmark />
